@@ -5,10 +5,12 @@ import (
 	"github.com/urfave/negroni"
 	"net/http"
 	"fmt"
+	"os"
 )
 
 func helloHandler(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintln(w, "hello!!!")
+	pp, _ := os.Getwd()
+	fmt.Fprintln(w, pp)
 }
 
 func main() {
